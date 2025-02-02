@@ -1,15 +1,7 @@
 <h1>{{title}}</h1>
 
-<!-- <div *ngIf="users.length > 0">
-  <p>Nombre d'utilisateurs : {{users.length}}</p>
-  <ul>
-    <li *ngFor="let user of users">
-      
-      Username: {{user.userName}} 
-
-    </li>
-  </ul>
-</div>
-<div *ngIf="users.length === 0">
-  Chargement des utilisateurs...
-</div> -->
+<ul>
+  <li *ngFor='let user of users'>
+    Id : {{ user.id }}  UserName : {{ user.userName }}
+  </li>
+</ul>
