@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projets\\DatingApp\\API\\API.csproj": {}
+    "D:\\Projets\\DatingApp\\API\\API.csproj": {}
   },
   "projects": {
-    "E:\\Projets\\DatingApp\\API\\API.csproj": {
+    "D:\\Projets\\DatingApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projets\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "D:\\Projets\\DatingApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "E:\\Projets\\DatingApp\\API\\API.csproj",
+        "projectPath": "D:\\Projets\\DatingApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "E:\\Projets\\DatingApp\\API\\obj\\",
+        "outputPath": "D:\\Projets\\DatingApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -60,6 +60,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
