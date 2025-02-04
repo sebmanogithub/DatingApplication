@@ -127,3 +127,6 @@ D:\Projets\DatingApp\API\obj\Debug\net5.0\refint\API.dll
 D:\Projets\DatingApp\API\obj\Debug\net5.0\API.pdb
 D:\Projets\DatingApp\API\obj\Debug\net5.0\API.genruntimeconfig.cache
 D:\Projets\DatingApp\API\obj\Debug\net5.0\ref\API.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
