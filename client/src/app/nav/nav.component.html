@@ -5,22 +5,21 @@
         <span class="navbar-toggler-icon"></span>
       </button>  RESPONSIVE -->
       <!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
-        <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="logout()" href="#">Logout</a>
-          </li>
+        <ul class="navbar-nav">
+          <ng-container *ngIf="accountService.currentUser$| async">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Messages</a>
+            </li>
+          </ng-container>        
         </ul>
 
-        <div class="dropdown" *ngIf="loggedIn" dropdown>
+        <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
           <a class="dropdown-toggle text-light" dropdownToggle>Welcome User</a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item">Edit Profile</a>
@@ -29,7 +28,7 @@
           </div>
         </div>
 
-        <form *ngIf="!loggedIn" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()"
+        <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()"
           autocomplete="off">
           <input 
             name="username"
