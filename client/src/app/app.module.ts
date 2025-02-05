@@ -9,12 +9,14 @@ import { NavComponent } from './nav/nav.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    Nav2Component
+    Nav2Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
