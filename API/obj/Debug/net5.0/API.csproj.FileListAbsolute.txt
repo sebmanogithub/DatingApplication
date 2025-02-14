@@ -130,3 +130,4 @@ D:\Projets\DatingApp\API\obj\Debug\net5.0\ref\API.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\Data\UserSeedData.json
