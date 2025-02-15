@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { ReplaySubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   //Un ReplaySubject conserve une ou plusieurs valeurs dans le temps 
   // et les rejoue pour les abonnés.
   // Usage : Permet de stocker et de diffuser l'état actuel de l'utilisateur
