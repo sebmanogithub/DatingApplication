@@ -33,7 +33,7 @@ namespace API.Controllers
             using var hmac = new HMACSHA512();
             AppUser user = new AppUser
             {
-                UserName = registerDto.Username.ToLower(),
+                Username = registerDto.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
@@ -43,7 +43,7 @@ namespace API.Controllers
 
             return new UserDto 
             {
-                Username = user.UserName,
+                Username = user.Username,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -52,7 +52,7 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             AppUser user = await _context.Users
-                .SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
+                .SingleOrDefaultAsync(x => x.Username == loginDto.Username);
             
             if (user == null)
             {
@@ -72,14 +72,14 @@ namespace API.Controllers
 
             return new UserDto 
             {
-                Username = user.UserName,
+                Username = user.Username,
                 Token = _tokenService.CreateToken(user)
             };
         }
 
-        private async Task<bool> UserExists(string UserName)
+        private async Task<bool> UserExists(string Username)
         {
-            return await _context.Users.AnyAsync(x => x.UserName == UserName.ToLower());
+            return await _context.Users.AnyAsync(x => x.Username == Username.ToLower());
         }
     }
 }
