@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment';
 import { Member } from '../models/members';
 
 const user = localStorage.getItem('user');
-const token = user ? JSON.parse(user)?.token : null;
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +19,9 @@ export class MembersService {
 
   getMember(username : string) {
     return this.http.get<Member>(this.baseUrl + 'users/' + username)
+  }
+
+  updateMember(member: Member) {
+    return this.http.put(this.baseUrl + 'users', member);
   }
 }
