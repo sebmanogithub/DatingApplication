@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs/operators';
 import { AccountService } from 'src/app/_services/account.service';
+import { MembersService } from 'src/app/_services/members.service';
 import { Member } from 'src/app/models/members';
+import { Photo } from 'src/app/models/photo';
 import { User } from 'src/app/models/user';
 import { environment } from 'src/environments/environment';
 
@@ -12,19 +14,37 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./photo-editor.component.css']
 })
 export class PhotoEditorComponent implements OnInit {
-  @Input() member?: Member;
+  @Input() member: Member = {} as Member;
   uploader: FileUploader = new FileUploader({});
   hasBaseDropzoneOver = false;
   baseUrl = environment.apiUrl;
-  user?: User;
+  user: User = {} as User;
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService,
+    private memberService: MembersService
+  ) {
     this.accountService.currentUser$.pipe(take(1)).
       subscribe(user => this.user = user);
    }
 
   ngOnInit(): void {
     this.initializeUploader();
+  }
+
+  setMainPhoto(photo: Photo){
+    this.memberService.setMainPhoto(photo.id).subscribe(() => {
+      this.user.photoUrl = photo.url;
+      this.accountService.setCurrentUser(this.user);
+      this.member.photoUrl = photo.url;
+      this.member.photos.forEach(p => {
+        if (p.isMain) {
+          p.isMain = false;
+        }
+        if (p.id == photo.id) {
+          p.isMain = true;
+        }
+      })
+  })
   }
 
   fileOverBase(event: any){

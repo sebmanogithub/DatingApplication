@@ -5,8 +5,6 @@ import { Member } from '../models/members';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const user = localStorage.getItem('user');
-
 @Injectable({
   providedIn: 'root'
 })
@@ -43,5 +41,9 @@ export class MembersService {
         this.members[index] = member;
       })
     )
+  }
+
+  setMainPhoto(photoId: number){
+    return this.http.put(this.baseUrl + 'users/set-main-photo/' + photoId, {});
   }
 }
