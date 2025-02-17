@@ -133,3 +133,5 @@ D:\Projets\DatingApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.Open
 D:\Projets\DatingApp\API\bin\Debug\net5.0\Data\UserSeedData.json
 D:\Projets\DatingApp\API\bin\Debug\net5.0\AutoMapper.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\CloudinaryDotNet.dll
+D:\Projets\DatingApp\API\bin\Debug\net5.0\Newtonsoft.Json.dll
