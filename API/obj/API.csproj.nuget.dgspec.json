@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projets\\DatingApp\\API\\API.csproj": {}
+    "D:\\Projets\\DatingApp\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Projets\\DatingApp\\API\\API.csproj": {
+    "D:\\Projets\\DatingApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projets\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "D:\\Projets\\DatingApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Projets\\DatingApp\\API\\API.csproj",
+        "projectPath": "D:\\Projets\\DatingApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "D:\\Projets\\DatingApp\\API\\obj\\",
+        "outputPath": "D:\\Projets\\DatingApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"

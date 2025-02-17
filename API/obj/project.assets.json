@@ -2060,11 +2060,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projets\\DatingApp\\API\\API.csproj",
+      "projectUniqueName": "D:\\Projets\\DatingApp\\api\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\Projets\\DatingApp\\API\\API.csproj",
+      "projectPath": "D:\\Projets\\DatingApp\\api\\API.csproj",
       "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-      "outputPath": "D:\\Projets\\DatingApp\\API\\obj\\",
+      "outputPath": "D:\\Projets\\DatingApp\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2159,7 +2159,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNetCore.Authentication.JwtBearer' 5.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-q7cg-43mg-qp69",
+      "message": "Le package 'Microsoft.AspNetCore.Authentication.JwtBearer' 5.0.0 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-q7cg-43mg-qp69.",
       "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
       "targetGraphs": [
         "net5.0"
@@ -2169,7 +2169,7 @@
       "code": "NU1902",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "message": "Le package 'System.IdentityModel.Tokens.Jwt' 7.0.0 présente une vulnérabilité de gravité moyenne connue, https://github.com/advisories/GHSA-59j7-ghrg-fj52.",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net5.0"
