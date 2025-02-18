@@ -18,8 +18,8 @@
         [label]='"Username"'></app-text-input>
     <app-text-input [formControl]='knownAsControl'
         [label]='"Known As"'></app-text-input>
-    <app-text-input [formControl]='dateOfBirthControl'
-        [label]='"Date Of Birth"'></app-text-input>
+    <app-date-input [formControl]='dateOfBirthControl'
+        [label]='"Date Of Birth"' [maxDate]='maxDate'></app-date-input>
     <app-text-input [formControl]='cityControl'
         [label]='"City"'></app-text-input>
     <app-text-input [formControl]='countryControl'
