@@ -1,8 +1,29 @@
 <form [formGroup]='registerForm' (ngSubmit)="register()" autocomplete="off">
     <h2 class="text-center text-primary">Sign up</h2>
     <hr>
+
+    <div class="form-group">
+        <label class="control-label" style="margin-right: 10px;">
+            I am a:
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value='male' formControlName='gender'> Male
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value='female' formControlName='gender'
+            class="ml-3"> Female
+        </label>
+    </div>
     <app-text-input [formControl]='usernameControl'
         [label]='"Username"'></app-text-input>
+    <app-text-input [formControl]='knownAsControl'
+        [label]='"Known As"'></app-text-input>
+    <app-text-input [formControl]='dateOfBirthControl'
+        [label]='"Date Of Birth"'></app-text-input>
+    <app-text-input [formControl]='cityControl'
+        [label]='"City"'></app-text-input>
+    <app-text-input [formControl]='countryControl'
+        [label]='"Country"'></app-text-input>
     <app-text-input [formControl]='passwordControl'
         [label]='"Password"' [type]='"password"'> </app-text-input>
     <app-text-input [formControl]='confirmPasswordControl'

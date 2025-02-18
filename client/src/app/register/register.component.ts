@@ -11,7 +11,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Vali
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
-  registerForm!: FormGroup;
+  registerForm: FormGroup = new FormGroup({});
 
   constructor(
     private accountService : AccountService,
@@ -24,7 +24,12 @@ export class RegisterComponent implements OnInit {
 
   iniatilizeForm(){
     this.registerForm = this.fb.group({
+      gender: ['male'],
       username: ['',Validators.required],
+      knownAs: ['',Validators.required],
+      dateOfBirth: ['',Validators.required],
+      city: ['',Validators.required],
+      country: ['',Validators.required],
       password: ['', [Validators.required, 
                         Validators.minLength(4), Validators.maxLength(8)]],
       confirmPassword: ['', [Validators.required, this.matchValues('password')]]
@@ -60,6 +65,10 @@ export class RegisterComponent implements OnInit {
     this.cancelRegister.emit(false);
   }
 
+  get usernameControl(): FormControl {
+    return this.registerForm.controls["username"] as FormControl;
+  }
+
   get confirmPasswordControl(): FormControl {
     return this.registerForm.controls["confirmPassword"] as FormControl;
   }
@@ -68,7 +77,19 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls["password"] as FormControl;
   }
 
-  get usernameControl(): FormControl {
-    return this.registerForm.controls["username"] as FormControl;
+  get knownAsControl(): FormControl {
+    return this.registerForm.controls["knownAs"] as FormControl;
+  }
+
+  get dateOfBirthControl(): FormControl {
+    return this.registerForm.controls["dateOfBirth"] as FormControl;
+  }
+
+  get cityControl(): FormControl {
+    return this.registerForm.controls["city"] as FormControl;
+  }
+
+  get countryControl(): FormControl {
+    return this.registerForm.controls["country"] as FormControl;
   }
 }
