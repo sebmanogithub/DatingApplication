@@ -58,4 +58,16 @@ export class RegisterComponent implements OnInit {
   cancel(){
     this.cancelRegister.emit(false);
   }
+
+  get confirmPasswordControl(): FormControl {
+    return this.registerForm.controls["confirmPassword"] as FormControl;
+  }
+
+  get passwordControl(): FormControl {
+    return this.registerForm.controls["password"] as FormControl;
+  }
+
+  get usernameControl(): FormControl {
+    return this.registerForm.controls["username"] as FormControl;
+  }
 }
