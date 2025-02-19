@@ -16,15 +16,16 @@ import { UserParams } from 'src/app/models/userParams';
 export class MemberListComponent implements OnInit {
   members: Member[] = [];
   pagination!: Pagination;
-  userParam!: UserParams;
+  userParams!: UserParams;
   user!: User;
+  genderList = [{value: 'male', display: 'Males'}, {value: 'female', display: 'Females'}]
 
   constructor(private memberService : MembersService,
     private accountService: AccountService
   ) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe( user => {
       this.user = user;
-      this.userParam = new UserParams(user);
+      this.userParams = new UserParams(user);
     })
   }
 
@@ -33,7 +34,7 @@ export class MemberListComponent implements OnInit {
   }
 
   loadMembers() {
-    this.memberService.getMembers(this.userParam)
+    this.memberService.getMembers(this.userParams)
       .subscribe({
         next: response => {
           if (response.result && response.pagination) {
@@ -44,9 +45,14 @@ export class MemberListComponent implements OnInit {
       });
   }
 
+  resetFilters(){
+      this.userParams = new UserParams(this.user);
+      this.loadMembers();
+  }
+
   pageChanged(event: any) {
-    if (this.userParam.pageNumber !== event.page) {
-      this.userParam.pageNumber = event.page;
+    if (this.userParams.pageNumber !== event.page) {
+      this.userParams.pageNumber = event.page;
       this.loadMembers();
     }
   }
