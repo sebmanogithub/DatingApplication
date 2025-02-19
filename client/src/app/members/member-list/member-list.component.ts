@@ -13,7 +13,7 @@ export class MemberListComponent implements OnInit {
   members: Member[] = [];
   pagination!: Pagination;
   pageNumber = 1;
-  pageSize = 6;
+  pageSize = 5;
 
   constructor(private memberService : MembersService) { }
 
@@ -23,9 +23,20 @@ export class MemberListComponent implements OnInit {
 
   loadMembers() {
     this.memberService.getMembers(this.pageNumber, this.pageSize)
-      .subscribe(response => {
-        this.members = response.result!;
-        this.pagination = response.pagination;
-    })
+      .subscribe({
+        next: response => {
+          if (response.result && response.pagination) {
+            this.members = response.result;
+            this.pagination = response.pagination;
+          }
+        }
+      });
+  }
+
+  pageChanged(event: any) {
+    if (this.pageNumber !== event.page) {
+      this.pageNumber = event.page;
+      this.loadMembers();
+    }
   }
 }

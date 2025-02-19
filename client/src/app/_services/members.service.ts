@@ -23,6 +23,7 @@ export class MembersService {
     {
       params = params.append('pageNumber', page.toString());
       params = params.append('pageSize', itemsPerPage.toString());
+      console.log(params);
     }
 
     return this.http.get<Member[]>(this.baseUrl + 'users', 
@@ -33,6 +34,7 @@ export class MembersService {
         if (paginationHeader) {
           this.paginatedResult.pagination = JSON.parse(paginationHeader);
         }
+        console.log(this.paginatedResult);
         return this.paginatedResult;
       })
     )    
