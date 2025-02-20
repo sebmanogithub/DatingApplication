@@ -27,7 +27,8 @@ namespace API.Services
             // Informations relatives au payload
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.NameId, user.Username)
+                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Username)
             };
         
             var tokenDescriptor = new SecurityTokenDescriptor
