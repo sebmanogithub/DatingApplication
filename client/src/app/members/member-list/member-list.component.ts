@@ -40,6 +40,13 @@ export class MemberListComponent implements OnInit {
           if (response.result && response.pagination) {
             this.members = response.result;
             this.pagination = response.pagination;
+            console.log("---------memberList-------");
+            console.log(response.result);
+            console.log(this.members);
+            console.log(response.pagination);
+            console.log(this.pagination);
+            console.log("---------memberList-------");
+            console.log(this.pagination.totalItems);
           }
         }
       });

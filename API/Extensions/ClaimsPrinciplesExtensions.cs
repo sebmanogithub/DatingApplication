@@ -15,7 +15,19 @@ namespace API.Extensions
 
         public static int GetUserId(this ClaimsPrincipal user)
         {
-            return int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var value = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new ArgumentException("NameIdentifier claim is missing or empty");
+            }
+
+            if (!int.TryParse(value, out int userId))
+            {
+                throw new ArgumentException($"NameIdentifier claim value '{value}' is not a valid integer");
+            }
+
+            return userId;
         }
     }
 }

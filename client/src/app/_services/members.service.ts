@@ -22,6 +22,7 @@ export class MembersService {
     params = params.append('minAge', userParams.minAge.toString());
     params = params.append('maxAge', userParams.maxAge.toString());
     params = params.append('gender', userParams.gender);
+    params = params.append('orderBy', userParams.orderBy);
 
     return this.getPaginatedResult<Member[]>(this.baseUrl + 'users', params);
   }
@@ -57,9 +58,11 @@ export class MembersService {
     return this.http.get<T>(url, { observe: 'response', params })
         .pipe(map(response => {
           paginatedResult.result = response.body;
+          console.log(paginatedResult.result);
           const paginationHeader = response.headers.get('Pagination');
           if (paginationHeader) {
             paginatedResult.pagination = JSON.parse(paginationHeader);
+            console.log(paginatedResult.pagination);
           }
           return paginatedResult;
         })
