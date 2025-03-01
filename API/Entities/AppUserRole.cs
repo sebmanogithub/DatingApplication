@@ -5,6 +5,7 @@ namespace API.Entities
 {
     public class AppUserRole : IdentityUserRole<int>
     {
-        public ICollection<AppUserRole> UserRoles { get; set; }
+        public AppUser User { get; set; } = null!;
+        public AppRole Role { get; set; } = null!;
     }
 }
