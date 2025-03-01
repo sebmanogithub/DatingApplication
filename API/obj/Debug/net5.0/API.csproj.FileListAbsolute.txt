@@ -140,3 +140,4 @@ D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyD
 D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Data\UserSeedData copy.json
