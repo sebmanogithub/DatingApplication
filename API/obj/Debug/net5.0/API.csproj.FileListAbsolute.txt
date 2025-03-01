@@ -135,3 +135,8 @@ D:\Projets\DatingApp\API\bin\Debug\net5.0\AutoMapper.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\CloudinaryDotNet.dll
 D:\Projets\DatingApp\API\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\Projets\DatingApp\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
