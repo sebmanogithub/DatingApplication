@@ -29,9 +29,9 @@ const routes: Routes = [
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]}
     ]
   },
-  {path: 'not-found', component: NotFoundComponent},
-  {path: 'server-error', component: ServerErrorComponent},
-  {path: '**', component: NotFoundComponent, pathMatch: 'full'}
+    {path: 'not-found', component: NotFoundComponent},
+    {path: 'server-error', component: ServerErrorComponent},
+    {path: '**', component: HomeComponent, pathMatch: 'full'},
 ];
 
 @NgModule({
