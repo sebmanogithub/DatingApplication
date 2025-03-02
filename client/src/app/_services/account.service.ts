@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { PresenceService } from './presence.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,9 @@ export class AccountService {
   //Rend les données de currentUserSource accessibles aux composants ou services 
   //abonnés. Le $ indique que c'est un Observable
   currentUser$ = this.currentUserSource.asObservable();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private presence: PresenceService
+  ) { }
 
   // pipe : Permet de chaîner des opérateurs RxJS pour traiter les données de la réponse.
   // map : Transforme la réponse de l'API avant qu'elle ne soit transmise à l'abonné.
@@ -28,6 +31,7 @@ export class AccountService {
         const user = response;
         if (user) {
           this.setCurrentUser(user);
+          this.presence.createHubConnection(user);
         }
       })
     )
@@ -38,6 +42,7 @@ export class AccountService {
       map(user => {
         if (user) {
           this.setCurrentUser(user);
+          this.presence.createHubConnection(user);
         }
       })
     )
@@ -55,6 +60,7 @@ export class AccountService {
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next({} as User);
+    this.presence.stopHubConnection();
   }
 
   getDecodedToken(token: string) {
